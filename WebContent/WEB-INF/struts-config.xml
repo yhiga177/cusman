@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+
+	<!-- (1)アクション・フォームBeanの指定 -->
+	<form-beans>
+		<form-bean name="LoginForm" type="login.form.LoginForm" />
+		<form-bean name="WebappForm" type="webapp.form.WebappForm" />
+		<form-bean name="RegisterItemForm" type="registeritem.RegisterItemForm" />
+	</form-beans>
+
+	<!-- (2)JSPからの遷移先指定 -->
+
+	<!-- (3)アクション・クラスの振る舞いを指定 -->
+    <action-mappings>
+        <action path="/login" type="login.action.LoginAction" name="LoginForm" scope="request">
+        	<forward name="success" path="/webapp.jsp"/>
+        	<forward name="fail" path="/login.jsp"/>
+        </action>
+        <action path="/webapp" type="webapp.action.WebappAction" name="WebappForm" scope="request">
+        	<forward name="success" path="/webapp.jsp"/>
+        	<forward name="fail" path="/webapp_fail.jsp"/>
+        </action>
+
+        <action path="/register_item" type="RegisterItemAction.RegisterItemAction" name="RegisterItemForm" scope="request">
+        	<forward name="register_item" path="/registeItem.jsp"/>
+        </action>
+    </action-mappings>
+
+    <message-resources parameter="resources.application"/>
+
+</struts-config>
+
