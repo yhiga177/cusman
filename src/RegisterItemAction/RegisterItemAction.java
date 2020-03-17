@@ -14,7 +14,7 @@ public class RegisterItemAction extends Action{
 			HttpServletRequest req,
 			HttpServletResponse res) {
 
-		System.out.println("RegisterItemForm");
+		System.out.println("RegisterItemAction");
 
 		return mapping.findForward("register_item");
 
