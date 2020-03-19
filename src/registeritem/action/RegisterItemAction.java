@@ -1,4 +1,4 @@
-package RegisterItemAction;
+package registeritem.action;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,8 +16,15 @@ public class RegisterItemAction extends Action{
 
 		System.out.println("RegisterItemAction");
 
-		return mapping.findForward("register_item");
+//		res.setContentType("text/html; charset=UTF-8");//[21]
+//        try {
+//			req.setCharacterEncoding("UTF-8");
+//		} catch (UnsupportedEncodingException e) {
+//			// TODO 自動生成された catch ブロック
+//			e.printStackTrace();
+//		}//[23]
 
+		return mapping.findForward("register_item");
 
 	}
 

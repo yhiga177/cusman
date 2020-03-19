@@ -9,6 +9,8 @@ public class WebappForm extends ActionForm{
 	private int		price;
 	private String	description;
 
+	private String	message;
+
 
 	public int getNum() {
 		return num;
@@ -34,4 +36,12 @@ public class WebappForm extends ActionForm{
 	public void setDescription(String description) {
 		this.description = description;
 	}
+	public String getMessage() {
+		return message;
+	}
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+
 }

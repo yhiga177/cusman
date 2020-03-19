@@ -2,17 +2,25 @@ package BusinessLogic;
 
 import java.util.ArrayList;
 
-import dataaccess.WebappEntity;
+import dataaccess.TrSellItemsEntity;
 
 public class WebappBean {
 
 
-	public ArrayList<WebappEntity> fetchAllItemData() {
+	public ArrayList<TrSellItemsEntity> fetchAllItemData() {
 
 
 		WebappBC bc = new WebappBC();
 		return bc.fetchAllItemData();
 
 	}
+	
+	public Boolean InsertItemData(TrSellItemsEntity item) {
+		
+		WebappBC bc = new WebappBC();
+		return bc.InsertItemData(item);
+	}
+	
+	
 
 }

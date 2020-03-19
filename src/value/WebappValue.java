@@ -7,6 +7,8 @@ public class WebappValue {
 	int  		price;
 	String 		description;
 
+	String		message;
+
 
 	public WebappValue(){
 
@@ -14,7 +16,7 @@ public class WebappValue {
 		itemName = "";
 		price = 0;
 		description = "";
-
+		message = "";
 	}
 
 
@@ -56,6 +58,18 @@ public class WebappValue {
 	public void setDescription(String description) {
 		this.description = description;
 	}
+
+
+	public String getMessage() {
+		return message;
+	}
+
+
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+
 
 
 

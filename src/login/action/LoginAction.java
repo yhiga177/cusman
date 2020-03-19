@@ -1,5 +1,6 @@
 package login.action;
 
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
@@ -11,7 +12,7 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
 import BusinessLogic.WebappBean;
-import dataaccess.WebappEntity;
+import dataaccess.TrSellItemsEntity;
 import value.WebappValue;
 
 public class LoginAction extends Action {
@@ -19,9 +20,16 @@ public class LoginAction extends Action {
 	public ActionForward execute(ActionMapping mapping, ActionForm form,
 			HttpServletRequest req, HttpServletResponse res) {
 
+		try {
+			req.setCharacterEncoding("UTF-8");
+		} catch (UnsupportedEncodingException e) {
+			// TODO 自動生成された catch ブロック
+			e.printStackTrace();
+		}
+
 		//DBからとってくる
 		WebappBean bean = new WebappBean();
-		ArrayList<WebappEntity> enList = new ArrayList<WebappEntity>();
+		ArrayList<TrSellItemsEntity> enList = new ArrayList<TrSellItemsEntity>();
 		enList = bean.fetchAllItemData();
 
 		ArrayList<WebappValue> values = new ArrayList<WebappValue>();

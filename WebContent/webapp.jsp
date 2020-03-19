@@ -13,6 +13,8 @@
 </head>
 
 <body>
+
+<% request.setCharacterEncoding("utf-8"); %>
 <html:form action="/register_item">
 <html:submit value="新規登録"/>
 </html:form>

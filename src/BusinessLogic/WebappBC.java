@@ -2,17 +2,23 @@ package BusinessLogic;
 
 import java.util.ArrayList;
 
-import dataaccess.WebappEntity;
-import dataaccess.WebappManager;
+import dataaccess.TrSellItemsEntity;
+import dataaccess.TrSellItemsManager;
 
 public class WebappBC {
 
 
-	public ArrayList<WebappEntity> fetchAllItemData() {
+	public ArrayList<TrSellItemsEntity> fetchAllItemData() {
 
-		WebappManager man = new WebappManager();
+		TrSellItemsManager man = new TrSellItemsManager();
 		return man.fetchAllItemData();
 
+	}
+
+	public Boolean InsertItemData(TrSellItemsEntity item) {
+
+		TrSellItemsManager man = new TrSellItemsManager();
+		return man.InsertItemData(item);
 	}
 
 }
