@@ -1,22 +1,36 @@
-package value;
 
-public class WebappValue {
+import org.apache.struts.action.ActionForm;
 
-	int num;
-	String itemName;
-	String price;
-	String description;
+/**
+ * 商品情報格納用Formクラス
+ * @author yhiga
+ */
+public class WebappForm extends ActionForm {
 
-	String message;
+	/**
+	 * 商品ID
+	 */
+	private int num;
 
-	public WebappValue() {
+	/**
+	 * 商品名
+	 */
+	private String itemName;
 
-		num = 0;
-		itemName = "";
-		price = "";
-		description = "";
-		message = "";
-	}
+	/**
+	 * 価格
+	 */
+	private String price;
+
+	/**
+	 * 商品の説明
+	 */
+	private String description;
+
+	/**
+	 * エラーメッセージ
+	 */
+	private String message;
 
 	public int getNum() {
 		return num;

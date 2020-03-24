@@ -1,21 +1,20 @@
-package value;
+package dao;
 
-public class WebappValue {
+
+public class TrSellItemsEntity {
 
 	int num;
 	String itemName;
 	String price;
 	String description;
 
-	String message;
-
-	public WebappValue() {
+	public TrSellItemsEntity() {
 
 		num = 0;
 		itemName = "";
 		price = "";
 		description = "";
-		message = "";
+
 	}
 
 	public int getNum() {
@@ -48,14 +47,6 @@ public class WebappValue {
 
 	public void setDescription(String description) {
 		this.description = description;
-	}
-
-	public String getMessage() {
-		return message;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
 	}
 
 }

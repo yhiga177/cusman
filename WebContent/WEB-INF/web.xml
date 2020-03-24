@@ -10,7 +10,7 @@
 
         <filter-name>EncodeFilter</filter-name>
 
-        <filter-class>filters.SetCharacterEncodingFilter</filter-class>
+        <filter-class>config.SetCharacterEncodingFilter</filter-class>
 
         <init-param>
             <param-name>encoding</param-name>

@@ -8,11 +8,11 @@
 
 	<!-- (1)アクション・フォームBeanの指定 -->
 	<form-beans>
-		<form-bean name="LoginForm" type="login.form.LoginForm" />
-		<form-bean name="WebappForm" type="webapp.form.WebappForm" />
-		<form-bean name="RegisterItemForm" type="registeritem.form.RegisterItemForm" />
-		<form-bean name="ConfirmRegistrationForm" type="ConfirmRegistration.form.ConfirmRegistrationForm" />
-		<form-bean name="RegistrationDoneForm" type="RegistrationDone.form.RegistrationDoneForm" />
+		<form-bean name="LoginForm" type="LoginForm" />
+		<form-bean name="WebappForm" type="WebappForm" />
+		<form-bean name="RegisterItemForm" type="RegisterItemForm" />
+		<form-bean name="ConfirmRegistrationForm" type="ConfirmRegistrationForm" />
+		<form-bean name="RegistrationDoneForm" type="RegistrationDoneForm" />
 	</form-beans>
 
 	<!-- (2)JSPからの遷移先指定 -->
@@ -20,26 +20,26 @@
 	<!-- (3)アクション・クラスの振る舞いを指定 -->
     <action-mappings>
 
-        <action path="/login" type="login.action.LoginAction" name="LoginForm" scope="request">
+        <action path="/login" type="LoginAction" name="LoginForm" scope="request">
         	<forward name="success" path="/webapp.jsp"/>
         	<forward name="fail" path="/login.jsp"/>
         </action>
 
-        <action path="/webapp" type="webapp.action.WebappAction" name="WebappForm" scope="request">
+        <action path="/webapp" type="WebappAction" name="WebappForm" scope="request">
         	<forward name="success" path="/webapp.jsp"/>
         	<forward name="fail" path="/webapp_fail.jsp"/>
         </action>
 
-        <action path="/register_item" type="registeritem.action.RegisterItemAction" name="RegisterItemForm" scope="request">
+        <action path="/register_item" type="RegisterItemAction" name="WebappForm" scope="request">
         	<forward name="register_item" path="/registerItem.jsp"/>
         </action>
 
-        <action path="/confirm_registration" type="ConfirmRegistration.action.ConfirmRegistrationAction" name="ConfirmRegistrationForm" scope="request" validate="false">
+        <action path="/confirm_registration" type="ConfirmRegistrationAction" name="WebappForm" scope="request" validate="false">
         	<forward name="success" path="/ConfirmRegistration.jsp"/>
         	<forward name="fail" path="/registerItem.jsp"/>
         </action>
 
-        <action path="/registration_done" type="RegistrationDone.action.RegistrationDoneAction" name="RegistrationDoneForm" scope="request">
+        <action path="/registration_done" type="RegistrationDoneAction" name="WebappForm" scope="request">
         	<forward name="registration_done" path="/RegistrationDone.jsp"/>
         </action>
 
