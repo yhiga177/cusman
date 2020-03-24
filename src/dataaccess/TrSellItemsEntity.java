@@ -1,6 +1,6 @@
 package dataaccess;
 
-public class WebappEntity {
+public class TrSellItemsEntity {
 
 	int			num;
 	String 		itemName;
@@ -8,7 +8,7 @@ public class WebappEntity {
 	String 		description;
 
 
-	public WebappEntity(){
+	public TrSellItemsEntity(){
 
 		num = 0;
 		itemName = "";
