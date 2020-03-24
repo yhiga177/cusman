@@ -10,7 +10,6 @@ import java.util.ArrayList;
 
 public class TrSellItemsManager {
 
-
 	public ArrayList<TrSellItemsEntity> fetchAllItemData() {
 
 		ArrayList<TrSellItemsEntity> enList = new ArrayList<TrSellItemsEntity>();
@@ -18,30 +17,30 @@ public class TrSellItemsManager {
 		Connection conn = null;
 
 		try {
-				//JDBCドライバを読み込み
-				Class.forName("org.postgresql.Driver");
+			//JDBCドライバを読み込み
+			Class.forName("org.postgresql.Driver");
 
-				//データベースへ接続
-				conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/webapp","test","test");
+			//データベースへ接続
+			conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/webapp", "test", "test");
 
-				//SELECT文を準備
-				String sql = "SELECT * FROM tr_sell_items;";
-				PreparedStatement pStmt = conn.prepareStatement(sql);
+			//SELECT文を準備
+			String sql = "SELECT * FROM tr_sell_items;";
+			PreparedStatement pStmt = conn.prepareStatement(sql);
 
-				//SELECTを実行し、結果表ResultSetを取得
-				ResultSet rs = pStmt.executeQuery();
+			//SELECTを実行し、結果表ResultSetを取得
+			ResultSet rs = pStmt.executeQuery();
 
-				//レコード表示
-				while (rs.next()) {
+			//レコード表示
+			while (rs.next()) {
 
-					TrSellItemsEntity en = new TrSellItemsEntity();
-					en.setNum(rs.getInt("sell_items_num"));
-					en.setItemName(rs.getString("sell_items_name"));
-					en.setPrice(rs.getInt("sell_items_price"));
-					en.setDescription(rs.getString("sell_items_Description"));
+				TrSellItemsEntity en = new TrSellItemsEntity();
+				en.setNum(rs.getInt("sell_items_num"));
+				en.setItemName(rs.getString("sell_items_name"));
+				en.setPrice(rs.getInt("sell_items_price"));
+				en.setDescription(rs.getString("sell_items_Description"));
 
-					enList.add(en);
-				}
+				enList.add(en);
+			}
 
 		} catch (ClassNotFoundException e) {
 			System.out.println("ClassNotFoundException");
@@ -58,31 +57,30 @@ public class TrSellItemsManager {
 		PreparedStatement pStmt = null;
 
 		try {
-				//JDBCドライバを読み込み
-				Class.forName("org.postgresql.Driver");
+			//JDBCドライバを読み込み
+			Class.forName("org.postgresql.Driver");
 
-				//データベースへ接続
-				conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/webapp","test","test");
+			//データベースへ接続
+			conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/webapp", "test", "test");
 
-				//INSERT文を準備
-				String sql = "INSERT INTO tr_sell_items"
-				+ "(items_num,sell_items_price, sell_items_name, sell_items_description,show_flag,insert_date,update_date)"
-				+"VALUES(1,?,?,?,1,?,?);";
+			//INSERT文を準備
+			String sql = "INSERT INTO tr_sell_items"
+					+ "(items_num,sell_items_price, sell_items_name, sell_items_description,show_flag,insert_date,update_date)"
+					+ "VALUES(1,?,?,?,1,?,?);";
 
-				pStmt = conn.prepareStatement(sql);
+			pStmt = conn.prepareStatement(sql);
 
-				Timestamp timestamp = new Timestamp(System.currentTimeMillis());
-				pStmt.setInt(1, item.getPrice());
-				pStmt.setString(2, item.getItemName());
-				pStmt.setString(3, item.getDescription());
-				pStmt.setTimestamp(4, timestamp);
-				pStmt.setTimestamp(5, timestamp);
+			Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+			pStmt.setInt(1, item.getPrice());
+			pStmt.setString(2, item.getItemName());
+			pStmt.setString(3, item.getDescription());
+			pStmt.setTimestamp(4, timestamp);
+			pStmt.setTimestamp(5, timestamp);
 
-				System.out.println(pStmt.toString());
+			System.out.println(pStmt.toString());
 
-				//INSERT分を実行し、結果表ResultSetを取得
-				pStmt.executeUpdate();
-
+			//INSERT分を実行し、結果表ResultSetを取得
+			pStmt.executeUpdate();
 
 		} catch (ClassNotFoundException e) {
 			System.out.println("ClassNotFoundException");

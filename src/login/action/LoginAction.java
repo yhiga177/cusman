@@ -27,15 +27,13 @@ public class LoginAction extends Action {
 			e.printStackTrace();
 		}
 
-		//DBからとってくる
 		WebappBean bean = new WebappBean();
 		ArrayList<TrSellItemsEntity> enList = new ArrayList<TrSellItemsEntity>();
 		enList = bean.fetchAllItemData();
 
 		ArrayList<WebappValue> values = new ArrayList<WebappValue>();
 
-		for(int i = 0;i < enList.size();i++)
-		{
+		for (int i = 0; i < enList.size(); i++) {
 			WebappValue value = new WebappValue();
 			value.setItemName(enList.get(i).getItemName());
 			value.setNum(enList.get(i).getNum());

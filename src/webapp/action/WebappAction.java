@@ -14,17 +14,6 @@ public class WebappAction extends Action {
 									HttpServletRequest req,
 									HttpServletResponse res) {
 
-//		WebappForm waf = (WebappForm)form;
-//		int num = waf.getNum();
-		String name = "test";
-//		int price = waf.getPrice();
-//		String description = waf.getDescription();
-
-		//req.setAttribute("num", num);
-		req.setAttribute("name", name);
-		//req.setAttribute("price", price);
-		//req.setAttribute("description", description);
-
 		return mapping.findForward("success");
 
 	}
